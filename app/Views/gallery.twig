@@ -18,15 +18,21 @@
                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
                     <img src="{{ picture.path }}" alt=""/></td>
                 {% if picture.id == user.profilePicture.id %}
-                <td><img class="ml-6" width="120" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/274/star_2b50.png"/></td>
+                <td><img class="ml-6" width="120"
+                         src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/274/star_2b50.png"/>
+                </td>
                 {% else %}
                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
                     <form action="/gallery/setmain/{{ picture.id }}" method="post">
-                        <button class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline" name="main" value="{{ picture.id }}">Set Main</button>
+                        <button class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline"
+                                name="main" value="{{ picture.id }}">Set Main
+                        </button>
                     </form>
 
                     <form action="/gallery/delete/{{ picture.id }}" method="post">
-                        <button class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline" name="delete" value="{{ picture.id }}">Delete</button>
+                        <button class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline"
+                                name="delete" value="{{ picture.id }}">Delete
+                        </button>
                     </form>
                     {% endif %}
             </tr>

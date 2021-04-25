@@ -20,8 +20,7 @@ class ImageValidation
         }
         if (!$this->validateType()) {
             $_SESSION['_flash']['error'] = 'Upload type must by jpg/png/jpeg';
-        }
-        else{
+        } else {
             $_SESSION['_flash']['success'] = 'Upload successful';
         }
         return $this->validateSize() && $this->validateType();
