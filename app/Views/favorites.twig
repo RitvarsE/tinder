@@ -1,0 +1,17 @@
+{% extends 'templateLayout.twig' %}
+{% block content %}
+    <div class="mb-10 text-center text-4xl font-bold text-indigo-600">See who you liked!</div>
+    <div class="flex-col w-4/12 mx-auto">
+        {% if favorites is null %}
+            <div class="mt-20 text-center text-4xl font-bold text-indigo-600">You haven`t liked anyone yet!</div>
+        {% else %}
+        {% for favorite in favorites %}
+            <div class=" text-xl font-bold text-center">{{ favorite.login }}
+                {{ favorite.age }}
+                <img alt="{{ favorite.login }}" src="{{ favorite.profilePicture.path }}" class="mb-5"/>
+            </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+{% endblock %}

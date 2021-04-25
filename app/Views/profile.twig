@@ -1,0 +1,27 @@
+{% extends 'templateLayout.twig' %}
+{% block content %}
+    <div class="w-4/12 mx-auto">
+        <div class=" text-xl font-bold">Username: {{ user.login }}</div>
+        <br>
+        <div class=" text-xl font-semibold">Age: {{ user.age }}</div>
+        <br>
+        <div class=" text-xl font-semibold">Gender:
+            {% if user.gender == 1 %}
+                Male
+            {% else %}
+                Female
+            {% endif %}
+        </div>
+        <br>
+        <img class="inline" alt="profilePicture" src="{{ user.profilePicture.path }}"/><br>
+        {% if user.profilePicture.id == 27 %}
+            <a href="/gallery">
+                <button class="mt-5 inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-black uppercase transition bg-transparent border-2 border-black rounded ripple hover:bg-gray-100 focus:outline-none">
+                    Set up your main picture
+                </button>
+            </a>
+            <br>
+        {% else %}
+        {% endif %}
+    </div>
+{% endblock %}

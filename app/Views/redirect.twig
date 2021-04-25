@@ -1,0 +1,7 @@
+{% extends 'templateLayoutNoHeader.twig' %}
+{% block content %}
+    <div class="my-60 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl text-indigo-600 text-center">
+        {{ message }}
+    </div>
+    <meta http-equiv="refresh" content="{{ timeout }}; URL=/{{ redirect }}"/>
+{% endblock %}

@@ -12,7 +12,10 @@
         "league/container": "^3.3",
         "catfan/medoo": "^1.7",
         "twig/twig": "^3.3",
-        "doctrine/cache": "^1.10"
+        "doctrine/cache": "^1.10",
+      "ext-pdo": "*",
+      "ext-gd": "*",
+        "intervention/image": "^2.5"
     },
     "autoload": {
         "psr-4": {
