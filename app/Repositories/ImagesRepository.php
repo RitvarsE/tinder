@@ -4,8 +4,8 @@
 namespace App\Repositories;
 
 
-use Tests\Image;
-use Tests\ImagesCollection;
+use App\Models\Image;
+use App\Models\ImagesCollection;
 
 interface ImagesRepository
 {

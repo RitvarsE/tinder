@@ -35,7 +35,7 @@
             </div>
             <div class="mb-2 pt-3 rounded bg-gray-200">
                 <label class="block text-gray-700 text-sm font-bold ml-3">Age</label>
-                <input type="text" id="text" name="age" required class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3">
+                <input type="number" id="age" min="18" max="100" name="age" required class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3">
             </div>
             <div class="mb-2 pt-3 rounded bg-gray-200">
                 <label class="block text-gray-700 text-sm font-bold ml-3">Gender</label>
@@ -46,7 +46,7 @@
             </div>
             <div class="mb-2 pt-3 rounded bg-gray-200">
                 <label class="block text-gray-700 text-sm font-bold ml-3">Password</label>
-                <input type="password" id="password" name="password" required class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3">
+                <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" type="password" id="password" name="password" required class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3">
             </div>
             <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Register</button>
         </form>

@@ -4,10 +4,10 @@
 namespace App\Repositories;
 
 
-use Tests\Favorite;
-use Tests\Image;
-use Tests\User;
-use Tests\UsersCollection;
+use App\Models\Favorite;
+use App\Models\Image;
+use App\Models\User;
+use App\Models\UsersCollection;
 
 interface UsersRepository
 {

@@ -4,10 +4,10 @@
 namespace App\Repositories;
 
 
-use Tests\Favorite;
-use Tests\Image;
-use Tests\User;
-use Tests\UsersCollection;
+use App\Models\Favorite;
+use App\Models\Image;
+use App\Models\User;
+use App\Models\UsersCollection;
 use InvalidArgumentException;
 use Medoo\Medoo;
 use PDO;
@@ -27,6 +27,7 @@ class MysqlUsersRepository implements UsersRepository
 
     public function verifyLogin(string $login, string $password): bool
     {
+
         if ($this->hasUser($login)) {
             $user = $this->getUser($login);
             return password_verify($password, $user->getPassword());

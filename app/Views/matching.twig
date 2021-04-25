@@ -1,6 +1,6 @@
 {% extends 'templateLayout.twig' %}
 {% block content %}
-    <div class="ml-48">
+    <div class="mt-10 w-4/12 mx-auto">
         <div class=" text-xl font-bold">{{ match.login }} {{ match.age }}</div><br>
         <img src="{{ match.profilePicture.path }}" class="mb-5"/>
         <div class="flex flex-row align-center"><form action="/like/{{ match.id }}" method="post">

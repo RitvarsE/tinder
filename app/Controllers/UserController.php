@@ -48,13 +48,15 @@ class UserController
     public function register(): string
     {
         $redirect = '';
-        $message = 'Login Successful';
+        $message = 'Registration Successful';
         $timeout = 1;
-        $error = 'problem';
         if ($this->usersService->create($_POST)) {
             return $this->twig->render('success.twig', compact('redirect', 'message', 'timeout'));
         }
-        return $this->twig->render('error.twig', compact('redirect', 'timeout', 'error'));
+        $message = $_SESSION['_flash']['error'] . ". Redirecting back to registration in 5 seconds";
+        $redirect = 'register';
+        $timeout = 5;
+        return $this->twig->render('error.twig', compact('redirect', 'timeout', 'message'));
     }
 
     public function profile(): string
@@ -84,7 +86,7 @@ class UserController
             $timeout = 1;
             return $this->twig->render('redirect.twig', compact('message', 'redirect', 'timeout'));
         } else {
-            $match = $match->getUsers()[0];
+            $match = $match->getUsers()[array_rand($match->getUsers())];
         }
         return $this->twig->render('matching.twig', compact('match'));
     }

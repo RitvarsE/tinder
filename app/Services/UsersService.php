@@ -4,9 +4,9 @@
 namespace App\Services;
 
 
-use Tests\Favorite;
-use Tests\User;
-use Tests\UsersCollection;
+use App\Models\Favorite;
+use App\Models\User;
+use App\Models\UsersCollection;
 use App\Repositories\ImagesRepository;
 use App\Repositories\UsersRepository;
 use App\Validators\RegistrationValidation;
@@ -39,6 +39,7 @@ class UsersService
 
     public function create(array $postData): bool
     {
+
         $validation = (new RegistrationValidation($postData))->validateRegistration();
         if ($this->hasUser($postData['login'])) {
             return false;

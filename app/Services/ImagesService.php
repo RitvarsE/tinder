@@ -4,8 +4,8 @@
 namespace App\Services;
 
 
-use Tests\Image;
-use Tests\ImagesCollection;
+use App\Models\Image;
+use App\Models\ImagesCollection;
 use App\Repositories\ImagesRepository;
 use App\Validators\ImageValidation;
 use Intervention\Image\ImageManager;
