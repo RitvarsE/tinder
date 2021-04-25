@@ -4,10 +4,10 @@
 namespace App\Repositories;
 
 
-use App\Models\Favorite;
-use App\Models\Image;
-use App\Models\User;
-use App\Models\UsersCollection;
+use Tests\Favorite;
+use Tests\Image;
+use Tests\User;
+use Tests\UsersCollection;
 use InvalidArgumentException;
 use Medoo\Medoo;
 use PDO;
@@ -125,26 +125,17 @@ class MysqlUsersRepository implements UsersRepository
 
     public function getFavorites(User $user, int $status = null): UsersCollection
     {
-        if ($status === 1) {
+        if ($status === 0 || $status === 1) {
             $favorites = $this->database->select(
                 'favorites',
-                ['[>]users'=>['favorite_id'=>'id']],
+                ['[>]users' => ['favorite_id' => 'id']],
                 '*',
                 ['user_id' => $user->getId(),
                     'favorite' => $status]);
-
-        } elseif ($status === 0) {
-            $favorites = $this->database->select(
-                'favorites',
-                ['[>]users'=>['favorite_id'=>'id']],
-                '*',
-                ['user_id' => $user->getId(),
-                    'favorite' => $status]);
-
         } else {
             $favorites = $this->database->select(
                 'favorites',
-                ['[>]users'=>['favorite_id'=>'id']],
+                ['[>]users' => ['favorite_id' => 'id']],
                 '*',
                 ['user_id' => $user->getId()]);
         }

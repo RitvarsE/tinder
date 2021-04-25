@@ -4,8 +4,8 @@
 namespace App\Repositories;
 
 
-use App\Models\Image;
-use App\Models\ImagesCollection;
+use Tests\Image;
+use Tests\ImagesCollection;
 use Medoo\Medoo;
 use PDO;
 

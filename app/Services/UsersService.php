@@ -4,9 +4,9 @@
 namespace App\Services;
 
 
-use App\Models\Favorite;
-use App\Models\User;
-use App\Models\UsersCollection;
+use Tests\Favorite;
+use Tests\User;
+use Tests\UsersCollection;
 use App\Repositories\ImagesRepository;
 use App\Repositories\UsersRepository;
 use App\Validators\RegistrationValidation;

@@ -47,20 +47,6 @@ class User
         return $this->profilePicture;
     }
 
-    public function setPassword(string $password): void
-    {
-        $this->password = $password;
-    }
-
-    public function setAge(int $age): void
-    {
-        $this->age = $age;
-    }
-
-    public function setProfilePicture(Image $profilePicture): void
-    {
-        $this->profilePicture = $profilePicture;
-    }
 
     public function isGender(): bool
     {
